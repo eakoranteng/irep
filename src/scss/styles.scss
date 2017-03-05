@@ -1,0 +1,87 @@
+// Definitions
+@import "variables";
+
+// Mixins
+@import "mixins";
+
+// Fonts
+@import "fonts";
+
+
+// Custom Styles
+a, button {
+	color: inherit;
+	&:hover, &:focus {
+		color: inherit;
+	}
+	&:focus {
+		outline: none !important;
+	}
+}
+
+body {
+	background: $body-bg;
+	color: $body-color;
+}
+
+.logo-wrapper {
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+.content-wrapper {
+	> section {
+		margin-top: 20px;
+		margin-bottom: 20px;
+	}
+}
+.photo-wrapper {
+	padding: 10px 20px;
+	border-top: 1px solid $photo-wrapper-border-color;
+	border-bottom: 1px solid $photo-wrapper-border-color;
+}
+.photo-container {
+	position: relative;
+	height: 350px;
+	max-width: 250px;
+	background: darken($photo-container-bg-color, 50%);
+	margin-left: auto;
+	margin-right: auto;
+	> img {
+		display: block;
+		width: 100%;
+		position: absolute;
+		bottom: 0
+	}
+	> form {
+		position: relative;
+		top: 125px;
+		bottom: 0;
+	}
+}
+
+#filters {
+	.btn {
+		background: transparent;
+		border-bottom: 1px solid;
+		&:hover {
+			color: darken($body-color, 30%);
+			border-bottom-color: darken($body-color, 30%);
+		}
+	}
+}
+#share {
+	span {
+		font-size: 34px;
+		margin-left: 3px;
+		margin-right: 3px;
+		&.icon-facebook-with-circle {
+			color: $facebook-color;
+		}
+		&.icon-instagram-with-circle {
+			color: $instagram-color;
+		}
+		&.icon-twitter-with-circle {
+			color: $twitter-color;
+		}
+	}
+}

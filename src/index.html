@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>iRep</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	<link rel="stylesheet" href="css/styles.css">
+	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+</head>
+<body>
+	<div class="container">
+		<header class="logo-wrapper row">
+			<img class="pull-left" src="img/melcom_logo.png" width="120" alt="">
+		</header>
+		<div class="row">
+			<div class="content-wrapper col-sm-offset-6 col-sm-5 col-md-4 col-lg-3">
+				<section class="photo-wrapper">
+					<div class="photo-container">
+						<form class="text-center" action="">
+							<input type="file" name="user_photo" id="user_photo" accept="image/*">
+							<button type="submit" class="btn btn-primary">ADD PHOTO</button>
+						</form>
+						<img src="img/rep.png" alt="">
+					</div>
+				</section>
+				<section>
+					<input type="range" name="price-min" id="zoom-slider" value="200" min="0" max="1000">
+				</section>
+				<section id="filters">
+					<button type="button" class="btn btn-sm btn-block"><span class="icon-image pull-right"></span>GREYSCALE</button>
+					<button type="button" class="btn btn-sm btn-block"><span class="icon-rotate-right pull-right"></span>ROTATE</button>
+					<button type="button" class="btn btn-sm btn-block"><span class="icon-floppy-disk pull-right"></span>SAVE</button>
+				</section>
+				<section id="share" class="text-center">
+					<div>
+						<span class="icon-facebook-with-circle"></span>
+						<span class="icon-instagram-with-circle"></span>
+						<span class="icon-twitter-with-circle"></span>
+					</div>
+				</section>
+			</div>
+		</div>
+	</div>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+	<script type="text/javascript" src="js/scripts.js"></script>
+</body>
+</html>
