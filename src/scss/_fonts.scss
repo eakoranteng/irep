@@ -1,11 +1,10 @@
-// ICOMOON
 @font-face {
   font-family: 'icomoon';
-  src:  url('../fonts/icomoon.eot?f4jtce');
-  src:  url('../fonts/icomoon.eot?f4jtce#iefix') format('embedded-opentype'),
-    url('../fonts/icomoon.ttf?f4jtce') format('truetype'),
-    url('../fonts/icomoon.woff?f4jtce') format('woff'),
-    url('../fonts/icomoon.svg?f4jtce#icomoon') format('svg');
+  src:  url('../fonts/icomoon.eot?zcneoe');
+  src:  url('../fonts/icomoon.eot?zcneoe#iefix') format('embedded-opentype'),
+    url('../fonts/icomoon.ttf?zcneoe') format('truetype'),
+    url('../fonts/icomoon.woff?zcneoe') format('woff'),
+    url('../fonts/icomoon.svg?zcneoe#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -25,20 +24,26 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-repeat:before {
-  content: "\e900";
-}
-.icon-rotate-right:before {
+.icon-twitter-with-circle:before {
   content: "\e900";
 }
 .icon-instagram-with-circle:before {
   content: "\e901";
 }
-.icon-twitter-with-circle:before {
+.icon-facebook-with-circle:before {
   content: "\e902";
 }
-.icon-facebook-with-circle:before {
+.icon-rotate-left:before {
   content: "\e903";
+}
+.icon-undo:before {
+  content: "\e903";
+}
+.icon-repeat:before {
+  content: "\e904";
+}
+.icon-rotate-right:before {
+  content: "\e904";
 }
 .icon-image:before {
   content: "\e90d";
@@ -46,3 +51,7 @@
 .icon-floppy-disk:before {
   content: "\e962";
 }
+.icon-loop2:before {
+  content: "\ea2e";
+}
+

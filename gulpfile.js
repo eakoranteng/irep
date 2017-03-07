@@ -12,6 +12,9 @@ var gulp = require('gulp'),
 
 gulp.task("concatScripts", function() {
 	return gulp.src([
+		'lib/cropit/dist/jquery.cropit.js',
+		'lib/html2canvas/build/html2canvas.js',
+		'lib/jssocials/dist/jssocials.min.js',
 		'src/js/main.js'])
 	.pipe(maps.init())
 	.pipe(concat("scripts.js"))
@@ -32,7 +35,7 @@ gulp.task('minifyScripts', ['concatScripts'], function (cb) {
 gulp.task('compileSass', () =>
     sass('src/scss/styles.scss', {
     	sourcemap: true,
-    	style: 'compressed'
+    	style: 'nested'
     })
     .pipe(autoprefixer({browsers: ['last 10 versions']}))
     .on('error', sass.logError)

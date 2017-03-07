@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>iRep</title>
+	<title>Melcom celebrates GH@60</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 	<link rel="stylesheet" href="css/styles.css">
 	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -13,30 +13,45 @@
 <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 <![endif]-->
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.2/angular.min.js"></script>
 </head>
-<body>
-	<div class="container">
+<body ng-app="irep">
+	<div class="container" ng-controller="irepCtrl">
 		<header class="logo-wrapper row">
 			<img class="pull-left" src="img/melcom_logo.png" width="120" alt="">
 		</header>
 		<div class="row">
-			<div class="content-wrapper col-sm-offset-6 col-sm-5 col-md-4 col-lg-3">
+			<div class="content-wrapper image-editor col-sm-offset-6 col-sm-5 col-md-4 col-lg-3">
 				<section class="photo-wrapper">
 					<div class="photo-container">
-						<form class="text-center" action="">
-							<input type="file" name="user_photo" id="user_photo" accept="image/*">
-							<button type="submit" class="btn btn-primary">ADD PHOTO</button>
-						</form>
-						<img src="img/rep.png" alt="">
+						<div ng-class="{'grayscale': applyGrayscale}" class="cropit-preview">
+							<div ng-click="uploaded = true" ng-hide="uploaded" class="upload btn btn-danger text-center">
+								<span>Add Photo</span>
+								<input type="file" class="cropit-image-input">
+							</div>
+							<img src="img/GH@60-filter.png" height="161" width="300" alt="Ghana at 60">
+						</div>
 					</div>
 				</section>
-				<section>
-					<input type="range" name="price-min" id="zoom-slider" value="200" min="0" max="1000">
+				<section ng-show="uploaded" class="row">
+					<div class="col-xs-12 text-center">
+						<button class="update btn btn-danger">Change Photo</button>
+					</div>
+				</section>
+				<section class="row">
+					<div class="col-xs-2">
+						<span class="icon-rotate-left rotate-ccw"></span>
+					</div>
+					<div class="col-xs-8">
+						<input type="range" value="0" class="cropit-image-zoom-input custom">
+					</div>
+					<div class="col-xs-2">
+						<span class="icon-rotate-right rotate-cw"></span>
+					</div>
 				</section>
 				<section id="filters">
-					<button type="button" class="btn btn-sm btn-block"><span class="icon-image pull-right"></span>GREYSCALE</button>
-					<button type="button" class="btn btn-sm btn-block"><span class="icon-rotate-right pull-right"></span>ROTATE</button>
-					<button type="button" class="btn btn-sm btn-block"><span class="icon-floppy-disk pull-right"></span>SAVE</button>
+					<button ng-click="applyGrayscale = !applyGrayscale" type="button" class="btn btn-default btn-sm btn-block"><span class="icon-image pull-right"></span>GREYSCALE</button>
+					<button ng-click="saveImage()" type="button" class="btn btn-primary btn-sm btn-block"><span class="icon-floppy-disk pull-right"></span>SAVE</button>
 				</section>
 				<section id="share" class="text-center">
 					<div>
