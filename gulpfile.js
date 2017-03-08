@@ -13,7 +13,10 @@ var gulp = require('gulp'),
 gulp.task("concatScripts", function() {
 	return gulp.src([
 		'lib/cropit/dist/jquery.cropit.js',
+		// 'lib/dom-to-image/src/dom-to-image.js',
 		'lib/html2canvas/build/html2canvas.js',
+		// 'lib/canvas2image.js',
+		// 'lib/file-saver/FileSaver.min.js',
 		'lib/jssocials/dist/jssocials.min.js',
 		'src/js/main.js'])
 	.pipe(maps.init())
@@ -52,8 +55,8 @@ gulp.task('clean', function() {
 	del(['dist', 'src/css/styles.css', 'src/js/scripts.js']);
 });
 
-gulp.task('build',['compileSass'], function() {
-	return gulp.src(['src/css/styles.css', 'src/*.html', 'src/img/**', 'src/fonts/**'], {base: './src'})
+gulp.task('build',['compileSass', 'concatScripts'], function() {
+	return gulp.src(['src/css/styles.css', 'src/*.html', 'src/img/**', 'src/fonts/**', 'src/js/scripts.js'], {base: './src'})
 	.pipe(gulp.dest('dist'));
 });
 

@@ -35,18 +35,18 @@
 				</section>
 				<section ng-show="uploaded" class="row">
 					<div class="col-xs-12 text-center">
-						<button class="update btn btn-danger">Change Photo</button>
+						<button ng-click="updateImage()" class="update btn btn-danger">Change Photo</button>
 					</div>
 				</section>
 				<section class="row">
 					<div class="col-xs-2">
-						<span class="icon-rotate-left rotate-ccw"></span>
+						<span ng-click="rotateCCW" class="icon-rotate-left rotate-ccw"></span>
 					</div>
 					<div class="col-xs-8">
 						<input type="range" value="0" class="cropit-image-zoom-input custom">
 					</div>
 					<div class="col-xs-2">
-						<span class="icon-rotate-right rotate-cw"></span>
+						<span ng-click="rotateCW" class="icon-rotate-right rotate-cw"></span>
 					</div>
 				</section>
 				<section id="filters">
