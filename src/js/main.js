@@ -2,8 +2,6 @@ var irep = angular.module('irep', []);
 
 irep.controller('irepCtrl', function($scope){
 	$('.image-editor').cropit({
-		exportZoom: 2,
-		imageBackground: false,
 		onImageLoading: function() {
 			$scope.imageLoading = true;
 			$scope.$apply();
@@ -27,17 +25,23 @@ irep.controller('irepCtrl', function($scope){
 	};
 
 	$scope.saveImage = function() {
+		var w = $('.photo-container').width() * 3,
+			h =  $('.photo-container').height() * 3;
+
+		$('.cropit-preview-image-container').css('overflow', 'visible');
 		html2canvas($(".photo-container"), {
 			allowTaint: true,
-			logging: true,
-			useCORS: true,
-			proxy: "",
 			onrendered: function(canvas) {
-		        var image = canvas.toDataURL("image/jpeg");
-		  //       console.log(image);
-		        window.open(image);
-		        // Canvas2Image.saveAsJPEG(canvas);
-		    }
+				$('.cropit-preview-image-container').css('overflow', 'hidden');
+				var extra_canvas = document.createElement("canvas");
+                extra_canvas.setAttribute('width', w);
+                extra_canvas.setAttribute('height', h);
+                var ctx = extra_canvas.getContext('2d');
+                ctx.drawImage(canvas,0,0,canvas.width, canvas.height,0,0,w,h);
+				extra_canvas.toBlob(function(blob) {
+					saveAs(blob, "gh@60-melcom.jpg");
+				});
+			}
 		});
 	};
 
