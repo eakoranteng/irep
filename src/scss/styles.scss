@@ -8,9 +8,6 @@
 // Mixins
 @import "mixins";
 
-// Fonts
-@import "fonts";
-
 
 // Custom Styles
 a, button {
@@ -77,8 +74,8 @@ body {
 	margin-top: 10px;
 }
 
-.icon-rotate-right,
-.icon-rotate-left {
+.rotate-cw,
+.rotate-ccw {
 	cursor: pointer;
 	font-size: 20px;
 }
@@ -109,18 +106,18 @@ body {
 	}
 }
 #share {
-	span {
+	i {
 		font-size: 34px;
-		margin-left: 3px;
-		margin-right: 3px;
+		margin-left: 5px;
+		margin-right: 5px;
 		color: white;
-		&.icon-facebook-with-circle:hover {
+		&.fa-facebook-square:hover {
 			color: $facebook-color;
 		}
-		&.icon-instagram-with-circle:hover {
+		&.fa-instagram:hover {
 			color: $instagram-color;
 		}
-		&.icon-twitter-with-circle:hover {
+		&.fa-twitter-square:hover {
 			color: $twitter-color;
 		}
 	}

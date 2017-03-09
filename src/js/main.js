@@ -2,7 +2,7 @@ var irep = angular.module('irep', []);
 
 irep.controller('irepCtrl', function($scope){
 	$('.image-editor').cropit({
-		exportZoom: 1.5,
+		exportZoom: 2,
 		imageBackground: false,
 		onImageLoaded: function() {
 			$scope.uploaded = true;

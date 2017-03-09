@@ -6,6 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Melcom celebrates GH@60</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	<script src="https://use.fontawesome.com/5bfb66facb.js"></script>
 	<link rel="stylesheet" href="css/styles.css">
 	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -40,13 +41,13 @@
 				</section>
 				<section class="row">
 					<div class="col-xs-2">
-						<span ng-click="rotateCCW" class="icon-rotate-left rotate-ccw"></span>
+						<i ng-click="rotateCCW()" class="fa fa-undo rotate-ccw" aria-hidden="true"></i>
 					</div>
 					<div class="col-xs-8">
 						<input type="range" value="0" class="cropit-image-zoom-input custom">
 					</div>
 					<div class="col-xs-2">
-						<span ng-click="rotateCW" class="icon-rotate-right rotate-cw"></span>
+						<i ng-click="rotateCW()" class="fa fa-repeat rotate-cw" aria-hidden="true"></i>
 					</div>
 				</section>
 				<section id="filters">
@@ -55,9 +56,9 @@
 				</section>
 				<section id="share" class="text-center">
 					<div>
-						<span class="icon-facebook-with-circle"></span>
-						<span class="icon-instagram-with-circle"></span>
-						<span class="icon-twitter-with-circle"></span>
+						<i class="fa fa-facebook-square" aria-hidden="true"></i>
+						<i class="fa fa-twitter-square" aria-hidden="true"></i>
+						<i class="fa fa-instagram" aria-hidden="true"></i>
 					</div>
 				</section>
 			</div>
