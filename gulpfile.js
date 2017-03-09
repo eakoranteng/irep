@@ -16,8 +16,8 @@ gulp.task("concatScripts", function() {
 		// 'lib/dom-to-image/src/dom-to-image.js',
 		'lib/html2canvas/build/html2canvas.js',
 		// 'lib/canvas2image.js',
-		// 'lib/file-saver/FileSaver.min.js',
-		'lib/jssocials/dist/jssocials.min.js',
+		'lib/file-saver/FileSaver.min.js',
+		// 'lib/jssocials/dist/jssocials.min.js',
 		'src/js/main.js'])
 	.pipe(maps.init())
 	.pipe(concat("scripts.js"))

@@ -4,8 +4,13 @@ irep.controller('irepCtrl', function($scope){
 	$('.image-editor').cropit({
 		exportZoom: 2,
 		imageBackground: false,
+		onImageLoading: function() {
+			$scope.imageLoading = true;
+			$scope.$apply();
+		},
 		onImageLoaded: function() {
 			$scope.uploaded = true;
+			$scope.imageLoading = false;
 			$scope.$apply();
 		}
 	});
@@ -21,22 +26,6 @@ irep.controller('irepCtrl', function($scope){
 		$('.cropit-image-input').click();
 	};
 
-	// $(function() {
-	// 	$('.image-editor').cropit({
-	// 		exportZoom: 1,
-	// 		imageBackground: false
-	// 	});
-	// 	$('.update').click(function() {
-	// 	  	$('.cropit-image-input').click();
-	// 	});
-	// 	$('.rotate-cw').click(function() {
-	// 		$('.image-editor').cropit('rotateCW');
-	// 	});
-	// 	$('.rotate-ccw').click(function() {
-	// 		$('.image-editor').cropit('rotateCCW');
-	// 	});
-	// });
-
 	$scope.saveImage = function() {
 		html2canvas($(".photo-container"), {
 			allowTaint: true,
@@ -44,7 +33,6 @@ irep.controller('irepCtrl', function($scope){
 			useCORS: true,
 			proxy: "",
 			onrendered: function(canvas) {
-				// console.log(canvas);
 		        var image = canvas.toDataURL("image/jpeg");
 		  //       console.log(image);
 		        window.open(image);
