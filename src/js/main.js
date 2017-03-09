@@ -1,12 +1,14 @@
 var irep = angular.module('irep', []);
 
 irep.controller('irepCtrl', function($scope){
-	(function() {
-		$('.image-editor').cropit({
-			exportZoom: 1,
-			imageBackground: false
-		});
-	})();
+	$('.image-editor').cropit({
+		exportZoom: 1.5,
+		imageBackground: false,
+		onImageLoaded: function() {
+			$scope.uploaded = true;
+			$scope.$apply();
+		}
+	});
 
 	$scope.rotateCW = function() {
 		$('.image-editor').cropit('rotateCW');
@@ -51,9 +53,9 @@ irep.controller('irepCtrl', function($scope){
 		});
 	};
 
-	$("#share").jsSocials({
-		shares: ["facebook", "twitter", "whatsapp"]
-	});
+	// $("#share").jsSocials({
+	// 	shares: ["facebook", "twitter", "whatsapp"]
+	// });
 	
 	
 });
