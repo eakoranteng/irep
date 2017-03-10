@@ -26,7 +26,7 @@
 				<section class="photo-wrapper">
 					<div class="photo-container">
 						<div ng-class="{'grayscale': applyGrayscale}" class="cropit-preview">
-							<div ng-hide="uploaded" class="upload btn btn-danger text-center">
+							<div ng-hide="imageLoaded" class="upload btn btn-danger text-center">
 								<span>Add Photo</span>
 								<input type="file" class="cropit-image-input">
 							</div>
@@ -36,7 +36,7 @@
 						</div>
 					</div>
 				</section>
-				<section ng-show="uploaded" class="row">
+				<section ng-show="imageLoaded" class="row">
 					<div class="col-xs-12 text-center">
 						<button ng-click="updateImage()" class="update btn btn-danger">Change Photo</button>
 					</div>
@@ -58,13 +58,14 @@
 				</section>
 				<section id="share" class="text-center">
 					<div>
-						<i class="fa fa-facebook-square" aria-hidden="true"></i>
+						<i ng-click="fbShare()" class="fa fa-facebook-square" aria-hidden="true"></i>
 						<i class="fa fa-twitter-square" aria-hidden="true"></i>
 						<i class="fa fa-instagram" aria-hidden="true"></i>
 					</div>
 				</section>
 			</div>
 		</div>
+		<section id="canvas"></section>
 	</div>
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
