@@ -1,6 +1,6 @@
-var irep = angular.module('irep', []);
+var irep = angular.module('irep', ['720kb.socialshare']);
 
-irep.controller('irepCtrl', function($scope){
+irep.controller('irepCtrl', function($scope, Socialshare){
 	var extra_canvas;
 
 	$('.image-editor').cropit({
@@ -14,6 +14,24 @@ irep.controller('irepCtrl', function($scope){
 			$scope.$apply();
 		}
 	});
+
+	window.fbAsyncInit = function() {
+		FB.init({
+			appId      : '1241728932608031',
+			xfbml      : true,
+			version    : 'v2.8'
+		});
+		FB.AppEvents.logPageView();
+	};
+	(function(d, s, id){
+		var js, fjs = d.getElementsByTagName(s)[0];
+		if (d.getElementById(id)) {return;}
+		js = d.createElement(s); js.id = id;
+		js.src = "//connect.facebook.net/en_US/sdk.js";
+		fjs.parentNode.insertBefore(js, fjs);
+	}(document, 'script', 'facebook-jssdk'));
+
+
 
 	var saveImage = function(callback) {
 		var w = $('.photo-container').width() * 3,
@@ -58,9 +76,25 @@ irep.controller('irepCtrl', function($scope){
 
 	$scope.fbShare = function() {
 		saveImage(function() {
-			var img = extra_canvas.toDataURL("image/jpeg");
-			title = "I celebrate Ghana's 60th anniversary with Melcom. http://melcomgroup.com";
-			window.open('http://www.facebook.com/sharer.php?u='+encodeURIComponent(img)+'&t='+encodeURIComponent(title),'sharer','toolbar=0,status=0,width=626,height=436');return false;
+			var imgData = extra_canvas.toDataURL('image/jpeg');
+			Socialshare.share({
+				'provider': 'facebook',
+				'attrs': {
+					// 'socialshareUrl': 'http://colourboxsolutions.com',
+					'socialshareMedia': '../img/melcom_logo.png'
+				}
+			});
+		});
+	};
+	$scope.twitterShare = function() {
+		saveImage(function() {
+			var imgData = extra_canvas.toDataURL('image/jpeg');
+			Socialshare.share({
+				'provider': 'twitter',
+				'attrs': {
+					'socialshareText': '../img/melcom_logo.png'
+				}
+			});
 		});
 	};
 
