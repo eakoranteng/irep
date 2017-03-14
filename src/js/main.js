@@ -11,31 +11,14 @@ irep.controller('irepCtrl', function($scope, Socialshare){
 		onImageLoaded: function() {
 			$scope.imageLoaded = true;
 			$scope.imageLoading = false;
+			$scope.shareMedia = true;
 			$scope.$apply();
 		}
 	});
 
-	window.fbAsyncInit = function() {
-		FB.init({
-			appId      : '1241728932608031',
-			xfbml      : true,
-			version    : 'v2.8'
-		});
-		FB.AppEvents.logPageView();
-	};
-	(function(d, s, id){
-		var js, fjs = d.getElementsByTagName(s)[0];
-		if (d.getElementById(id)) {return;}
-		js = d.createElement(s); js.id = id;
-		js.src = "//connect.facebook.net/en_US/sdk.js";
-		fjs.parentNode.insertBefore(js, fjs);
-	}(document, 'script', 'facebook-jssdk'));
-
-
-
 	var saveImage = function(callback) {
-		var w = $('.photo-container').width() * 3,
-		h =  $('.photo-container').height() * 3;
+		var w = $('.photo-container').width() * 1,
+			h =  $('.photo-container').height() * 1;
 
 		$('.cropit-preview-image-container').css('overflow', 'visible');
 		html2canvas($(".photo-container"), {
@@ -61,11 +44,9 @@ irep.controller('irepCtrl', function($scope, Socialshare){
 	$scope.rotateCCW = function() {
 		$('.image-editor').cropit('rotateCCW');
 	};
-
 	$scope.updateImage = function() {
 		$('.cropit-image-input').click();
 	};
-
 	$scope.saveImage = function() {
 		saveImage(function() {
 			extra_canvas.toBlob(function(blob) {
@@ -76,12 +57,12 @@ irep.controller('irepCtrl', function($scope, Socialshare){
 
 	$scope.fbShare = function() {
 		saveImage(function() {
-			var imgData = extra_canvas.toDataURL('image/jpeg');
+			var imgData = extra_canvas.toDataURL("image/jpeg");
 			Socialshare.share({
 				'provider': 'facebook',
 				'attrs': {
-					// 'socialshareUrl': 'http://colourboxsolutions.com',
-					'socialshareMedia': '../img/melcom_logo.png'
+					'socialshareUrl': window.location.href,
+					'socialshareText': "Celebrating GH@60 with Melcom"
 				}
 			});
 		});
@@ -92,15 +73,24 @@ irep.controller('irepCtrl', function($scope, Socialshare){
 			Socialshare.share({
 				'provider': 'twitter',
 				'attrs': {
-					'socialshareText': '../img/melcom_logo.png'
+					'socialshareUrl': window.location.href,
+					'socialshareText': "Celebrating GH@60 with Melcom"
 				}
 			});
 		});
 	};
+	$scope.whatsappShare = function() {
+		saveImage(function() {
+			var imgData = extra_canvas.toDataURL('image/jpeg');
+			Socialshare.share({
+				'provider': 'whatsapp',
+				'attrs': {
+					'socialshareUrl': window.location.href,
+					'socialshareText': "Celebrating GH@60 with Melcom"
+				}
+			});
+		});
+	};
+	
 
-	// $("#share").jsSocials({
-	// 	shares: ["facebook", "twitter", "whatsapp"]
-	// });
-	
-	
 });

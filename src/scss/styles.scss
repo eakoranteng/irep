@@ -125,11 +125,12 @@ body {
 		margin-left: 5px;
 		margin-right: 5px;
 		color: white;
+		cursor: pointer;
 		&.fa-facebook-square:hover {
 			color: $facebook-color;
 		}
-		&.fa-instagram:hover {
-			color: $instagram-color;
+		&.fa-whatsapp:hover {
+			color: $whatsapp-color;
 		}
 		&.fa-twitter-square:hover {
 			color: $twitter-color;

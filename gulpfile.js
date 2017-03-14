@@ -15,7 +15,7 @@ gulp.task("concatScripts", function() {
 		'lib/cropit/dist/jquery.cropit.js',
 		// 'lib/dom-to-image/src/dom-to-image.js',
 		'lib/html2canvas/build/html2canvas.js',
-		// 'lib/canvas2image.js',
+		// 'lib/base64.js',
 		'lib/file-saver/FileSaver.min.js',
 		'lib/angular-socialshare/dist/angular-socialshare.min.js',
 		'src/js/main.js'])
