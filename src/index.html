@@ -1,22 +1,24 @@
 <!DOCTYPE html>
-<html lang="">
+<html lang="en">
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=0">
-	<title>Melcom celebrates GH@60</title>
+	<title>iRep</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 	<script src="https://use.fontawesome.com/5bfb66facb.js"></script>
 	<link rel="stylesheet" href="css/styles.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.2/angular.min.js"></script>
 </head>
 <body ng-app="irep">
-	<div class="container" ng-controller="irepCtrl">
-		<header class="logo-wrapper row">
-			<img class="pull-left" src="img/melcom_logo.png" width="120" alt="">
-		</header>
+	<div class="wrapper container" ng-controller="irepCtrl">
 		<div class="row">
-			<div class="content-wrapper image-editor col-sm-offset-6 col-sm-5 col-md-4 col-lg-3">
+			<div class="col-sm-6">
+				<div class="irep-title">
+					<h1 class="text-right">I AM A TRUE FAN.<br>I REPRESENT THIS.</h1>
+				</div>
+			</div>
+			<div class="content-wrapper image-editor col-sm-6 col-md-4 col-lg-3">
 				<section class="photo-wrapper">
 					<div class="photo-container">
 						<div ng-class="{'grayscale': applyGrayscale}" class="cropit-preview">
@@ -26,7 +28,7 @@
 							</div>
 							<i ng-show="imageLoading" class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
 							<span ng-show="imageLoading" class="sr-only loading">Loading...</span>
-							<img src="img/GH@60-filter.png" height="161" width="300" alt="Ghana at 60">
+							<img src="img/irep-filter.png" height="160" width="300" alt="Ghana at 60">
 						</div>
 					</div>
 				</section>

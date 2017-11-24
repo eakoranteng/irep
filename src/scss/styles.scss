@@ -22,12 +22,17 @@ a, button {
 
 body {
 	color: $body-color;
-	background: url(../img/GH@60-page_bg.jpg) no-repeat center bottom fixed;
+	background: url(../img/Elegant_Background-8.jpg) center bottom fixed;
 	background-size: cover;
 }
 
 .logo-wrapper {
 	padding-top: 10px;
+}
+.irep-title {
+    width: 320px;
+    float: right;
+	h1 { margin-top: 80px; }
 }
 .content-wrapper {
 	> section {
@@ -76,6 +81,7 @@ body {
 
 .cropit-preview-image-container {
 	cursor: move;
+	background-color: #999;
 }
 
 .cropit-preview-background {

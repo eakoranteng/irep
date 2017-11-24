@@ -50,7 +50,7 @@ irep.controller('irepCtrl', function($scope, Socialshare){
 	$scope.saveImage = function() {
 		saveImage(function() {
 			extra_canvas.toBlob(function(blob) {
-				saveAs(blob, "gh@60-melcom.jpg");
+				saveAs(blob, "irep-this.jpg");
 			});
 		});
 	};
@@ -62,7 +62,7 @@ irep.controller('irepCtrl', function($scope, Socialshare){
 				'provider': 'facebook',
 				'attrs': {
 					'socialshareUrl': window.location.href,
-					'socialshareText': "Celebrating GH@60 with Melcom"
+					'socialshareText': "I Represent This"
 				}
 			});
 		});
@@ -74,7 +74,7 @@ irep.controller('irepCtrl', function($scope, Socialshare){
 				'provider': 'twitter',
 				'attrs': {
 					'socialshareUrl': window.location.href,
-					'socialshareText': "Celebrating GH@60 with Melcom"
+					'socialshareText': "I Represent This"
 				}
 			});
 		});
@@ -86,7 +86,7 @@ irep.controller('irepCtrl', function($scope, Socialshare){
 				'provider': 'whatsapp',
 				'attrs': {
 					'socialshareUrl': window.location.href,
-					'socialshareText': "Celebrating GH@60 with Melcom"
+					'socialshareText': "I Represent This"
 				}
 			});
 		});

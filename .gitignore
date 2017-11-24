@@ -1,0 +1,17 @@
+# Folder view configuration files
+.DS_Store
+Desktop.ini
+._*
+Thumbs.db
+*.swp
+
+# Files that might appear on external disks
+.Spotlight-V100
+.Trashes
+.phpintel
+
+# Vendor files
+/node_modules
+/bower_components
+/lib
+/Gemfile.lock
